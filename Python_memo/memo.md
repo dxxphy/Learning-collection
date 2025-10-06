@@ -80,8 +80,8 @@ for x in ...:
 ```
 for x in ...循环就是把每个元素代入变量x，然后执行缩进块的语句
 
-### 四、 函数
-#### 1. 定义函数
+## 四、 函数
+### 1. 定义函数
 ```
 def my_abs(x):
     if x >= 0:
@@ -89,7 +89,7 @@ def my_abs(x):
     else:
         return -x
 ```    
-#### 2. 返回多个值
+### 2. 返回多个值
 ```
 import math
 
@@ -99,15 +99,15 @@ def move(x, y, step, angle=0):
     return nx, ny
 ```    
 本质是返回一个tuple，接受返回值时按照位置顺序接收：`x ,y = move(...)`
-#### 3. 默认参数
+### 3. 默认参数
 ```
 def power(x, n=2):
     ...
 ```
 **默认参数必须指向不变对象，否则多次调用会改变默认参数的值**
 
-#### 4.可变参数 (传入0个或任意个参数)    
-可变参数在函数调用时自动组装为一个tuple
+### 4.可变参数 (传入0个或任意个参数)    
+可变参数在函数调用时自动组装为一个**tuple**
 ```
 def calc(*numbers):
     sum = 0
@@ -124,8 +124,8 @@ def calc(*numbers):
 ```
 nums表示把nums这个list的所有元素作为可变参数传进去
 
-#### 5. 关键字参数 (传入0个或任意个含参数名的参数)   
-关键字参数在函数内部自动组装为一个dict     
+### 5. 关键字参数 (传入0个或任意个含参数名的参数)   
+关键字参数在函数内部自动组装为一个**dict**     
 ```
 def person(name, age, **kw):
     print('name:', name, 'age:', age, 'other:', kw)
@@ -162,3 +162,24 @@ def person(name, age, **kw):
         pass
     print('name:', name, 'age:', age, 'other:', kw)
 ```
+
+## 五、高级特性    
+
+### 1.切片
+取 list、tuple、string 的部分元素：     
+- L[a:b]：从a到b-1的元素（0可以省略）
+- L[a:b:c]：从a到b-1的每隔c个元素
+- [:]表示所有元素
+- L[::n]：所有元素每n个取一个    
+
+### 2.列表生成式
+创建有规律的list    
+```
+- [x * x for x in range(1, 11)]
+- [x * x for x in range(1, 11) if x % 2 == 0]
+- [m + n for m in 'ABC' for n in 'XYZ']
+- [x if x % 2 == 0 else -x for x in range(1, 11)]
+```    
+### 3. 生成器
+……
+

@@ -16,7 +16,9 @@ a=1.123456
 print(f"保留两位小数r = {r:.2f}")
 ```    
   
-5. `range(x)`：0 ~ x-1的整数序列
+5. `range(x)`：0 ~ x-1的整数序列    
+
+6. `raise ValueError('wrong value')`：错误处理，并立即中断程序
 
 
 
@@ -181,5 +183,34 @@ def person(name, age, **kw):
 - [x if x % 2 == 0 else -x for x in range(1, 11)]
 ```    
 ### 3. 生成器
-……
+……    
 
+## 六、 函数式编程
+### 1. 高级函数
+1. map(function, sequence)    
+    作用：将函数作用到序列（list、tuple、string等）的每一个元素上，返回一个新的序列
+2. reduce(function, sequence)  
+    function只能接受两个参数  
+    作用：把前两个参数输入function的结果和下一个元素输入function
+……    
+
+## 七、类    
+### 1. 类和实例    
+模板：
+```
+class Student(object):
+    def __init__(self, name, score):
+        self.name = name
+        self.score = score
+
+    def print_score(self):
+        print('%s: %s' % (self.name, self.score))
+```    
+- object表示继承的类，没有就默认object
+-  `__init__(self, x, y)`，一种特殊方法，self指向创建的实例，x,y指创建实例时需要提供的变量
+- 类中的方法第一个参数永远是实例变量self，并且调用时不用传递该参数
+- **动态绑定**：定义好一个类后，具体的实例也可以添加另外的变量或者方法
+    - 每个实例对象内部都维护着一个名为 `__dict__` 的字典（或者一个类似的映射结构）
+    - 当你执行 `instance.variable = value` 时，Python 实际上是在该实例的`__dict__` 字典中添加或修改一个键值对，键是变量名，值是变量数据
+- 以`__`开头的变量是私有变量
+- `__xxx__`是特殊变量，是 Python 解释器保留的

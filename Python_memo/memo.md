@@ -206,7 +206,7 @@ class Student(object):
     def print_score(self):
         print('%s: %s' % (self.name, self.score))
 ```    
-- object表示继承的类，没有就默认object
+- 括号内放的是父类，object是所有类的最顶层基类，也可以括号和父类都不写
 -  `__init__(self, x, y)`，一种特殊方法，self指向创建的实例，x,y指创建实例时需要提供的变量
 - 类中的方法第一个参数永远是实例变量self，并且调用时不用传递该参数
 - **动态绑定**：定义好一个类后，具体的实例也可以添加另外的变量或者方法

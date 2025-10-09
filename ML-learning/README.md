@@ -4,3 +4,6 @@
 
 学习路线：    
 python -> numpy, pandas, matplotlib -> Kaggle“泰坦尼克号生还者预测”  / Scikit-learn / PyTorch + MNIST手写数字识别……    
+
+
+2025/10/9 完成Python基础语法学习

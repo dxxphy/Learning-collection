@@ -12,3 +12,5 @@ __pycache__/
 venv/
 .venv/
 env/
+# 忽略练习文件
+Python_memo/practice.py

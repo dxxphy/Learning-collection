@@ -153,7 +153,7 @@ ament_package()
 ### Workflow
 1. cd ws/src
 2. - `ros2 pkg create <pkg_name> --build-type ament_python --dependencies rclpy std_msgs`     
-   - `ros2 pkg create <pkg_name> --build-type ament_cmake --dependencies rclpy std_msgs`
+   - `ros2 pkg create <pkg_name> --build-type ament_cmake --dependencies rclcpp std_msgs`
 3. 编写节点代码，声明依赖 (`package.xml`)，配置构建文件 (`CMakeLists.txt` / `setup.py`)
 4. `colcon build`：build/ 和 install/ 目录生成
 5. `source install/setup.bash`：激活环境
